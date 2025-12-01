@@ -159,6 +159,32 @@ export function CartProvider({ children }) {
   }, [cartItems])
 
   /**
+   * Calculate total original price (before discounts) of all items in cart.
+   *
+   * @returns {number} Total original price
+   */
+  const getOriginalTotalPrice = useCallback(() => {
+    return cartItems.reduce(
+      (total, item) => {
+        const originalPrice = item.originalPrice || item.price
+        return total + originalPrice * item.quantity
+      },
+      0
+    )
+  }, [cartItems])
+
+  /**
+   * Calculate total discount amount.
+   *
+   * @returns {number} Total discount
+   */
+  const getTotalDiscount = useCallback(() => {
+    const originalTotal = getOriginalTotalPrice()
+    const currentTotal = getTotalPrice()
+    return originalTotal - currentTotal
+  }, [getOriginalTotalPrice, getTotalPrice])
+
+  /**
    * Check if cart is empty.
    *
    * @returns {boolean} True if cart is empty
@@ -176,6 +202,8 @@ export function CartProvider({ children }) {
     clearCart,
     getTotalItems,
     getTotalPrice,
+    getOriginalTotalPrice,
+    getTotalDiscount,
     isCartEmpty,
   }
 

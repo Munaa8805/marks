@@ -131,10 +131,28 @@
 /* Action buttons */
 .actions {
   display: flex;
+  flex-direction: column;
   gap: var(--spacing-sm);
 }
 
-.clearButton,
+.viewCartButton {
+  flex: 1;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+.viewCartButton:hover {
+  background-color: var(--color-border);
+}
+
 .checkoutButton {
   flex: 1;
   padding: var(--spacing-md);
@@ -142,20 +160,10 @@
   font-weight: 600;
   font-size: 1rem;
   transition: var(--transition);
-}
-
-.clearButton {
-  background-color: var(--color-secondary);
-  color: var(--color-text);
-}
-
-.clearButton:hover {
-  background-color: var(--color-border);
-}
-
-.checkoutButton {
   background-color: var(--color-primary);
   color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .checkoutButton:hover {

@@ -14,6 +14,7 @@
 
 import { CartProvider } from '@/context/CartContext'
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import './globals.css'
 
 /**
@@ -35,11 +36,14 @@ export const metadata = {
 export default function RootLayout ({ children }) {
   return (
     <html lang='en'>
-      <body>
+      <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         {/* Wrap entire app with CartProvider for global cart state access */}
         <CartProvider>
           <Navbar />
-          {children}
+          <main style={{ flex: 1 }}>
+            {children}
+          </main>
+          <Footer />
         </CartProvider>
       </body>
     </html>

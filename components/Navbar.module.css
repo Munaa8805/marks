@@ -145,6 +145,11 @@
   color: #ffffff;
 }
 
+.actionLinkBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 /* Mobile menu button (hidden on desktop) */
 .mobileMenuButton {
   display: none;
@@ -167,7 +172,7 @@
 
 .mobileMenuIcon::before,
 .mobileMenuIcon::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   width: 1.2rem;
@@ -527,4 +532,3 @@
     font-size: 1.1rem;
   }
 }
-

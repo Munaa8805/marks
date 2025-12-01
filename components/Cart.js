@@ -15,6 +15,7 @@
 
 'use client'
 
+import Link from 'next/link'
 import { useCart } from '@/context/CartContext'
 import CartItem from './CartItem'
 import styles from './Cart.module.css'
@@ -92,17 +93,18 @@ export default function Cart({ isOpen, onClose }) {
 
               {/* Action buttons */}
               <div className={styles.actions}>
-                <button
-                  className={styles.clearButton}
-                  onClick={clearCart}
-                  aria-label="Clear all items from cart"
+                <Link
+                  href="/cart"
+                  className={styles.viewCartButton}
+                  onClick={onClose}
                 >
-                  Clear Cart
-                </button>
+                  View Full Cart
+                </Link>
                 <button
                   className={styles.checkoutButton}
                   onClick={() => {
-                    alert('Checkout functionality would be implemented here!')
+                    onClose()
+                    window.location.href = '/cart'
                   }}
                   aria-label="Proceed to checkout"
                 >
