@@ -1,0 +1,165 @@
+/**
+ * components/CartItem.module.css
+ *
+ * Styles for the CartItem component.
+ * Includes layout for product info, quantity controls, and responsive design.
+ */
+
+.cartItem {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-md);
+  background-color: var(--color-background);
+  transition: var(--transition);
+}
+
+.cartItem:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Product image */
+.imageContainer {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  background-color: var(--color-secondary);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholderImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  background-color: var(--color-secondary);
+}
+
+/* Product details */
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  min-width: 0;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.price {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+/* Quantity controls */
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xs);
+}
+
+.quantityButton {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: var(--transition);
+  border: 1px solid var(--color-border);
+}
+
+.quantityButton:hover {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.quantity {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+/* Right section with subtotal and remove */
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+}
+
+.subtotal {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.removeButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-secondary);
+  font-size: 1rem;
+  transition: var(--transition);
+  padding: 0;
+}
+
+.removeButton:hover {
+  background-color: var(--color-danger);
+  transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .cartItem {
+    flex-wrap: wrap;
+  }
+  
+  .imageContainer {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .rightSection {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+

@@ -1,0 +1,182 @@
+/**
+ * components/Cart.module.css
+ *
+ * Styles for the Cart component.
+ * Includes sidebar animation, layout, and responsive design.
+ */
+
+.cart {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-lg);
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease-in-out;
+}
+
+.cart.open {
+  right: 0;
+}
+
+/* Cart header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.closeButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  transition: var(--transition);
+}
+
+.closeButton:hover {
+  background-color: var(--color-border);
+}
+
+/* Cart content area */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.itemsList {
+  flex: 1;
+  padding: var(--spacing-md);
+  overflow-y: auto;
+}
+
+/* Empty cart state */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  height: 100%;
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.5;
+}
+
+.emptyText {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.emptySubtext {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+/* Cart footer */
+.footer {
+  padding: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-background);
+}
+
+.totalSection {
+  margin-bottom: var(--spacing-md);
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.totalLabel {
+  font-weight: 600;
+}
+
+.totalPrice {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+/* Action buttons */
+.actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.clearButton,
+.checkoutButton {
+  flex: 1;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.clearButton {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.clearButton:hover {
+  background-color: var(--color-border);
+}
+
+.checkoutButton {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.checkoutButton:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cart {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .header {
+    padding: var(--spacing-md);
+  }
+  
+  .title {
+    font-size: 1.25rem;
+  }
+}
+

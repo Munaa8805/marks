@@ -1,0 +1,417 @@
+/**
+ * utils/constants.js
+ *
+ * Application constants and mock data.
+ * Contains product data for demonstration purposes.
+ *
+ * In a real application, this would typically come from an API or database.
+ */
+
+/**
+ * Mock product data for demonstration.
+ * Each product has:
+ * - id: Unique identifier
+ * - name: Product name
+ * - description: Product description
+ * - price: Product price in USD
+ * - originalPrice: Optional original price for discount display
+ * - image: Optional product image URL (single image)
+ * - images: Optional array of product image URLs (for image gallery)
+ * - stock: Optional stock quantity
+ * - colors: Optional array of available colors (hex codes or color names)
+ * - sizes: Optional array of available sizes
+ * - rating: Optional product rating (0-5)
+ * - reviews: Optional number of reviews
+ * - category: Product category (Women, Men, Shoes, Kids, Workwear, Work Boots & Shoes, Accessories, etc.)
+ * - featured: Optional boolean for featured products
+ * - onSale: Optional boolean for sale items
+ */
+export const PRODUCTS = [
+  {
+    id: 1,
+    name: 'Wireless Headphones',
+    description: 'Premium noise-cancelling wireless headphones with long battery life. Experience crystal-clear audio with advanced noise cancellation technology.',
+    price: 129.99,
+    originalPrice: 159.99,
+    category: 'Accessories',
+    featured: true,
+    images: [
+      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&h=800&fit=crop',
+    ],
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop',
+    stock: 15,
+    colors: ['#000000', '#FFFFFF', '#FF0000', '#0000FF'],
+    rating: 4.3,
+    reviews: 1179,
+    reviewData: {
+      starDistribution: {
+        5: 895,
+        4: 83,
+        3: 47,
+        2: 24,
+        1: 130,
+      },
+      summary: 'Customers like the sound quality, noise cancellation, and battery life of the wireless headphones. They mention it provides excellent audio clarity, effective noise cancellation, and long-lasting battery. Some also say it\'s comfortable for extended use. However, some customers are disappointed with the build quality, disagree on value for money, and mention connectivity issues.',
+      tags: [
+        { label: 'Sound quality', positive: true },
+        { label: 'Noise cancellation', positive: true },
+        { label: 'Battery life', positive: true },
+        { label: 'Comfort', positive: true },
+        { label: 'Value for money', positive: false },
+        { label: 'Build quality', positive: false },
+        { label: 'Connectivity', positive: false },
+      ],
+      reviewImages: [
+        'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&h=200&fit=crop',
+        'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=200&h=200&fit=crop',
+        'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=200&h=200&fit=crop',
+        'https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=200&h=200&fit=crop',
+        'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=200&h=200&fit=crop',
+      ],
+      reviews: [
+        {
+          id: 1,
+          reviewer: 'Alex Johnson',
+          rating: 5,
+          headline: 'Excellent sound quality and noise cancellation',
+          date: 'August 15, 2024',
+          location: 'United States',
+          verified: true,
+          style: 'Black',
+          text: 'These headphones are amazing! The noise cancellation works perfectly, and the sound quality is crystal clear. I use them daily for work and travel, and the battery lasts all day. Highly recommend!',
+          subRatings: [
+            {
+              label: 'Sound Quality',
+              rating: 5,
+              description: 'Excellent audio clarity and bass response',
+            },
+            {
+              label: 'Noise Cancellation',
+              rating: 5,
+              description: 'Blocks out ambient noise effectively',
+            },
+            {
+              label: 'Battery Life',
+              rating: 5,
+              description: 'Lasts all day with heavy use',
+            },
+          ],
+          helpfulCount: 45,
+        },
+        {
+          id: 2,
+          reviewer: 'Sarah Chen',
+          rating: 4,
+          headline: 'Great headphones with minor issues',
+          date: 'September 2, 2024',
+          location: 'Canada',
+          verified: true,
+          style: 'White',
+          text: 'Overall, I\'m very happy with these headphones. The sound is great and they\'re comfortable to wear. The only issue is that sometimes the Bluetooth connection drops, but it\'s not a dealbreaker.',
+          subRatings: [
+            {
+              label: 'Sound Quality',
+              rating: 5,
+            },
+            {
+              label: 'Comfort',
+              rating: 4,
+            },
+            {
+              label: 'Connectivity',
+              rating: 3,
+            },
+          ],
+          helpfulCount: 23,
+        },
+        {
+          id: 3,
+          reviewer: 'Michael Brown',
+          rating: 5,
+          headline: 'Best headphones I\'ve ever owned',
+          date: 'October 10, 2024',
+          location: 'United Kingdom',
+          verified: true,
+          style: 'Black',
+          text: 'These are absolutely fantastic! The noise cancellation is incredible, and the sound quality is top-notch. The battery life is impressive too. Worth every penny!',
+          subRatings: [
+            {
+              label: 'Sound Quality',
+              rating: 5,
+              description: 'Perfect audio reproduction',
+            },
+            {
+              label: 'Noise Cancellation',
+              rating: 5,
+              description: 'Completely blocks out noise',
+            },
+            {
+              label: 'Battery Life',
+              rating: 5,
+              description: 'Exceeds expectations',
+            },
+            {
+              label: 'Comfort',
+              rating: 5,
+              description: 'Very comfortable for long sessions',
+            },
+          ],
+          helpfulCount: 67,
+        },
+      ],
+    },
+  },
+  {
+    id: 2,
+    name: 'Smart Watch',
+    description: 'Feature-rich smartwatch with fitness tracking and notifications. Stay connected and monitor your health with style.',
+    price: 249.99,
+    originalPrice: 299.99,
+    category: 'Accessories',
+    featured: true,
+    images: [
+      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1526437586694-40b6c83d6935?w=800&h=800&fit=crop',
+    ],
+    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop',
+    stock: 8,
+    colors: ['#000000', '#C0C0C0', '#FFD700', '#FF1493'],
+    sizes: ['Small', 'Medium', 'Large'],
+    rating: 4.6,
+    reviews: 89,
+  },
+  {
+    id: 3,
+    name: 'Laptop Stand',
+    description: 'Ergonomic aluminum laptop stand for better posture.',
+    price: 49.99,
+    image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=300&fit=crop',
+    stock: 20,
+    colors: ['#808080', '#000000', '#FFFFFF'],
+    category: 'Accessories',
+  },
+  {
+    id: 4,
+    name: 'Wireless Mouse',
+    description: 'Ergonomic wireless mouse with precision tracking. Designed for comfort during long work sessions.',
+    price: 29.99,
+    category: 'Accessories',
+    images: [
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?w=800&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&h=800&fit=crop',
+    ],
+    image: 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=300&fit=crop',
+    stock: 25,
+    colors: ['#000000', '#FFFFFF', '#FF0000', '#00FF00', '#0000FF'],
+    rating: 4.7,
+    reviews: 203,
+  },
+  {
+    id: 5,
+    name: 'USB-C Cable',
+    description: 'Fast charging USB-C cable, 6ft length.',
+    price: 12.99,
+    image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop',
+    stock: 50,
+    colors: ['#000000', '#FFFFFF', '#FF0000', '#00FF00', '#0000FF', '#FFFF00'],
+    category: 'Accessories',
+  },
+  {
+    id: 6,
+    name: 'Keyboard',
+    description: 'Mechanical keyboard with RGB backlighting.',
+    price: 89.99,
+    image: 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400&h=300&fit=crop',
+    stock: 12,
+    colors: ['#000000', '#FFFFFF', '#808080'],
+    category: 'Accessories',
+  },
+  {
+    id: 7,
+    name: 'Webcam',
+    description: 'HD webcam with autofocus and privacy shutter.',
+    price: 79.99,
+    image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop',
+    stock: 18,
+    colors: ['#000000', '#FFFFFF', '#808080'],
+    category: 'Accessories',
+  },
+  {
+    id: 8,
+    name: 'Monitor Stand',
+    description: 'Adjustable monitor stand with storage space.',
+    price: 39.99,
+    image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=300&fit=crop',
+    stock: 10,
+    colors: ['#808080', '#000000'],
+    category: 'Accessories',
+  },
+  // Women's products
+  {
+    id: 9,
+    name: 'Women\'s Casual Blazer',
+    description: 'Classic fit blazer perfect for office or casual wear. Made from premium fabric with modern tailoring.',
+    price: 89.99,
+    originalPrice: 129.99,
+    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=300&fit=crop',
+    stock: 15,
+    colors: ['#000000', '#3A3A3A', '#4A4A4A'],
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    category: 'Women',
+    onSale: true,
+  },
+  {
+    id: 10,
+    name: 'Women\'s Summer Dress',
+    description: 'Lightweight floral summer dress with comfortable fit. Perfect for warm weather occasions.',
+    price: 49.99,
+    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=300&fit=crop',
+    stock: 22,
+    colors: ['#FFB6C1', '#87CEEB', '#F0E68C', '#DDA0DD'],
+    sizes: ['XS', 'S', 'M', 'L'],
+    category: 'Women',
+  },
+  {
+    id: 11,
+    name: 'Women\'s Denim Jacket',
+    description: 'Classic denim jacket with modern fit. Versatile piece for any wardrobe.',
+    price: 69.99,
+    image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=300&fit=crop',
+    stock: 18,
+    colors: ['#4169E1', '#000000'],
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    category: 'Women',
+  },
+  // Men's products
+  {
+    id: 12,
+    name: 'Men\'s Classic T-Shirt',
+    description: 'Premium cotton t-shirt with comfortable fit. Essential wardrobe staple.',
+    price: 24.99,
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop',
+    stock: 35,
+    colors: ['#FFFFFF', '#000000', '#808080', '#FF0000', '#0000FF'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    category: 'Men',
+  },
+  {
+    id: 13,
+    name: 'Men\'s Chino Pants',
+    description: 'Classic chino pants with modern fit. Perfect for business casual or weekend wear.',
+    price: 59.99,
+    image: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&h=300&fit=crop',
+    stock: 20,
+    colors: ['#8B4513', '#000000', '#3A3A3A'],
+    sizes: ['30', '32', '34', '36', '38'],
+    category: 'Men',
+  },
+  {
+    id: 14,
+    name: 'Men\'s Hooded Sweatshirt',
+    description: 'Comfortable hooded sweatshirt with soft fabric. Great for casual wear.',
+    price: 44.99,
+    image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=300&fit=crop',
+    stock: 25,
+    colors: ['#000000', '#808080', '#FF0000', '#0000FF'],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    category: 'Men',
+  },
+  // Shoes
+  {
+    id: 15,
+    name: 'Running Shoes',
+    description: 'Lightweight running shoes with cushioned sole. Perfect for daily runs and workouts.',
+    price: 99.99,
+    originalPrice: 129.99,
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop',
+    stock: 30,
+    colors: ['#000000', '#FFFFFF', '#FF0000', '#0000FF'],
+    sizes: ['7', '8', '9', '10', '11', '12'],
+    category: 'Shoes',
+    onSale: true,
+  },
+  {
+    id: 16,
+    name: 'Casual Sneakers',
+    description: 'Comfortable casual sneakers for everyday wear. Stylish and versatile.',
+    price: 79.99,
+    image: 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=400&h=300&fit=crop',
+    stock: 28,
+    colors: ['#FFFFFF', '#000000', '#808080'],
+    sizes: ['7', '8', '9', '10', '11', '12'],
+    category: 'Shoes',
+  },
+  {
+    id: 17,
+    name: 'Dress Shoes',
+    description: 'Classic leather dress shoes. Perfect for formal occasions and business wear.',
+    price: 149.99,
+    image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop',
+    stock: 15,
+    colors: ['#000000', '#8B4513'],
+    sizes: ['7', '8', '9', '10', '11', '12'],
+    category: 'Shoes',
+  },
+  // Kids products
+  {
+    id: 18,
+    name: 'Kids\' T-Shirt Set',
+    description: 'Pack of 3 colorful t-shirts for kids. Made from soft, comfortable fabric.',
+    price: 29.99,
+    image: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&h=300&fit=crop',
+    stock: 40,
+    colors: ['#FF0000', '#00FF00', '#0000FF', '#FFFF00'],
+    sizes: ['4', '6', '8', '10', '12'],
+    category: 'Kids',
+  },
+  {
+    id: 19,
+    name: 'Kids\' Jeans',
+    description: 'Durable kids\' jeans with reinforced knees. Perfect for active play.',
+    price: 34.99,
+    image: 'https://images.unsplash.com/photo-1506629905607-0c0a2c4a0b95?w=400&h=300&fit=crop',
+    stock: 32,
+    colors: ['#4169E1', '#000000'],
+    sizes: ['4', '6', '8', '10', '12'],
+    category: 'Kids',
+  },
+  // Workwear
+  {
+    id: 20,
+    name: 'Work Boots',
+    description: 'Steel-toed work boots with slip-resistant sole. Safety certified for workplace use.',
+    price: 119.99,
+    image: 'https://images.unsplash.com/photo-1544966503-7cc75cbd34f8?w=400&h=300&fit=crop',
+    stock: 18,
+    colors: ['#8B4513', '#000000'],
+    sizes: ['7', '8', '9', '10', '11', '12'],
+    category: 'Workwear',
+  },
+  {
+    id: 21,
+    name: 'Work Pants',
+    description: 'Durable work pants with multiple pockets. Made from tough fabric for long-lasting wear.',
+    price: 54.99,
+    image: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&h=300&fit=crop',
+    stock: 24,
+    colors: ['#808080', '#000000'],
+    sizes: ['30', '32', '34', '36', '38', '40'],
+    category: 'Workwear',
+  },
+  {
+    id: 22,
+    name: 'Safety Work Boots',
+    description: 'Premium safety boots with composite toe. Waterproof and comfortable for long shifts.',
+    price: 139.99,
+    originalPrice: 179.99,
+    image: 'https://images.unsplash.com/photo-1544966503-7cc75cbd34f8?w=400&h=300&fit=crop',
+    stock: 12,
+    colors: ['#000000', '#8B4513'],
+    sizes: ['7', '8', '9', '10', '11', '12'],
+    category: 'Work Boots & Shoes',
+    onSale: true,
+  },
+]
+
